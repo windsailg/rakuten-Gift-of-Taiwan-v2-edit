@@ -1,0 +1,667 @@
+@import '_mixins/_mixins'
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap')
+@font-face
+    font-family: 'bahnschrift'
+    src: url('../font/bahnschrift.ttf')
+
+$primary: #d80f2b
+$secondary: #f4b5bd
+$thirdly: #d1322f
+$fourth: #9a2224
+$buttonShadowBlur: 20px
+
+@mixin zenKakuGothicNew($weight: 400)
+    font-family: 'Noto+Sans+JP', FontAwesome, 'Zen Kaku Gothic New'
+    font-weight: $weight
+
+@mixin bahnschrift($weight: 400)
+    font-family: 'bahnschrift'
+    font-weight: $weight
+
+#app
+    +flex
+    flex-direction: column
+
+.area
+    +flex
+    max-width: 1920px
+    &.fill
+        background-color: $secondary
+
+.container
+    +flex
+    max-width: 1500px
+    &.top
+        max-width: 100%
+        width: 100%
+        padding: 0
+    &.full
+        max-width: 100%
+        width: 100%
+        padding: 0
+    &.nav
+        max-width: 100%
+    &.footer
+        max-width: 100%
+        width: 100%
+        // padding: 0 80px
+
+.pc
+    display: inline-block
+.sp
+    display: none
+
+.header
+    position: absolute
+    z-index: 100
+    top: 0
+    max-width: 100%
+    width: 100%
+    .container
+        max-width: 1920px
+    &__block
+        +flex
+        justify-content: space-between
+        padding: 28px 0
+    &__logo
+        +ib(280px)
+        max-height: 80px
+        padding: 0 50px 0
+    &__nav
+        background-color: #ffffff
+        padding: 6px 24px
+        color: #444444
+        border-radius: 50px
+        margin: 0 20px 0 0
+        a
+            +zenKakuGothicNew
+            +hov
+            font-size: 1rem
+            font-weight: bold
+            padding: 0 20px
+
+.top
+    position: relative
+    &__splide
+        padding: 0
+        margin: 0
+        max-width: 100%
+    &__banner
+        &.sp
+            display: none
+    &__waves
+        position: absolute
+        bottom: 0px
+        width: 100%
+        height: 100%
+        min-height: 120px
+        max-height: 150px
+        overflow: hidden
+        pointer-events: none
+        svg
+            max-height: 150%
+            width: 100%
+        .parallax > use
+            animation: wave 20000ms cubic-bezier(.85,.5,.35,.5) infinite
+            &:nth-child(1)
+                animation-delay: -2s
+                animation-duration: 12s
+            // &:nth-child(2)
+            //     animation-delay: -3s
+            //     animation-duration: 10s
+            // &:nth-child(3)
+            //     animation-delay: -4s
+            //     animation-duration: 13s
+            // &:nth-child(4)
+            //     animation-delay: -5s
+            //     animation-duration: 20s
+            @keyframes wave
+                from
+                    transform: translate3d(-90px,0,0)
+                to
+                    transform: translate3d(85px,0,0)
+
+.categories
+    &__block
+        +flex
+        margin: 24px 0
+    &__item
+        +flex
+        max-width: 160px
+        height: 100%
+        // max-height: 160px
+        margin: 24px
+    &__box
+        +flex
+        max-width: 625px
+
+.imagine
+    .categories
+        &__item
+            max-width: 240px
+        &__box
+            max-width: unset
+
+.search
+    &__block
+        +flex
+        padding: 24px
+    &__box
+        +flex(514px)
+        position: relative
+    &__input
+        +flex
+        +zenKakuGothicNew
+        border-radius: 100px
+        text-align: left
+        padding: 15px 100px 15px 25px
+        border: 2px solid #555555
+        min-height: 60px
+        position: relative
+        font-size: 1.5rem
+        color: #555555
+        font-weight: bold
+        position: relative
+        &::placeholder
+            +zenKakuGothicNew
+            color: #555555
+    &__submit
+        +flex
+        +hov(0.7)
+        +pressY(1px)
+        overflow: hidden
+        z-index: 1
+        padding: 5px
+        color: #555555
+        font-size: 1.75rem
+        max-width: 100px
+        height: 100%
+        max-height: 100px
+        position: absolute
+        right: 5px
+        top: 0
+        bottom: 0
+        margin: auto
+        cursor: pointer
+    &__icon
+        +ib
+        width: 35px
+        height: 35px
+
+.tag
+    $tagsBackgroundColor: #ececec
+    &__block
+        +flex
+        +bahnschrift
+        background-color: $tagsBackgroundColor
+        margin: 24px 0 48px
+        padding: 20px 10px
+        max-width: 900px
+        flex-wrap: wrap
+        position: relative
+        &::before
+            content: ''
+            display: inline-block
+            position: absolute
+            top: -25px
+            right: 0
+            left: 0
+            margin: auto
+            z-index: 100
+            width: 0
+            height: 0
+            border-style: solid
+            border-width: 0 20px 25px 20px
+            border-color: transparent transparent $tagsBackgroundColor transparent
+        a
+            +flex
+            width: auto
+            padding: 8px 12px
+            font-size: 1rem
+            background-color: $primary
+            border-radius: 1px
+            margin: 5px
+            color: #ffffff
+            transition: unset
+            position: relative
+            &:hover
+                opacity: 0.7
+            &:active
+                top: 3px
+    &__title
+        +flex
+        font-weight: bold
+        font-size: 1.25rem
+        padding: 0 0 6px 0
+    &-move
+        transition: transform 1400ms ease-in-out !important
+
+.tip
+    &__block
+        +flex
+        padding: 20px
+    &__content
+        font-family: '微軟正黑體'
+        font-weight: bold
+        color: #555555
+        font-size: 1rem
+        line-height: 2rem
+
+.minibanner
+    .splide
+        &__arrow
+            &--prev
+                left: -40px
+            &--next
+                right: -40px
+    &__splide
+        margin: 46px 0
+    &__slide
+        max-width: 478px
+        margin: 0 12px
+
+.squarebanner
+    max-width: 100%
+    .splide
+        &__arrow
+            &--prev
+                left: 33%
+            &--next
+                right: 32%
+    &__splide
+        margin: 46px 0
+    &__slide
+        max-width: 718px
+        margin: 0 12px
+        a
+            transition: 100ms opacity ease-in-out
+            opacity: .4
+        &.is-active
+            a
+                opacity: 1
+
+.shopitem
+    position: relative
+    &__block
+        min-width: 100px
+        max-width: 1140px
+        overflow: visible
+        position: relative
+        margin: 36px 0
+    &__ele
+        +flex
+        // max-width: 354px
+        // margin: 0 10px
+        position: relative
+        &:hover
+            a, img
+                opacity: .95
+                opacity: .95
+        &::after
+            content: ''
+            +flex
+            position: absolute
+            z-index: 5
+            width: 80px
+            height: 80px
+            top: 0
+            left: 10px
+            background-repeat: no-repeat
+            background-size: 100%
+            pointer-events: none
+        &.tag
+            &__10::after
+                background-image: url('../images/sale-icon/off-10.svg')
+            &__20::after
+                background-image: url('../images/sale-icon/off-20.svg')
+            &__30::after
+                background-image: url('../images/sale-icon/off-30.svg')
+            &__40::after
+                background-image: url('../images/sale-icon/off-40.svg')
+            &__50::after
+                background-image: url('../images/sale-icon/off-50.svg')
+            &__60::after
+                background-image: url('../images/sale-icon/off-60.svg')
+            &__70::after
+                background-image: url('../images/sale-icon/off-70.svg')
+            &__80::after
+                background-image: url('../images/sale-icon/off-80.svg')
+            &__90::after
+                background-image: url('../images/sale-icon/off-90.svg')
+            &__new::after
+                background-image: url('../images/sale-icon/tag-new.svg')
+            &__pre::after
+                background-image: url('../images/sale-icon/tag-pre.svg')
+            &__inv::after
+                background-image: url('../images/sale-icon/tag-inv.svg')
+            &__point02::after
+                background-image: url('../images/sale-icon/point-02.svg')
+            &__point05::after
+                background-image: url('../images/sale-icon/point-05.svg')
+            &__point10::after
+                background-image: url('../images/sale-icon/point-10.svg')
+            &__point15::after
+                background-image: url('../images/sale-icon/point-15.svg')
+            &__point20::after
+                background-image: url('../images/sale-icon/point-20.svg')
+            &__point30::after
+                background-image: url('../images/sale-icon/point-30.svg')
+        a
+            +flex
+            justify-content: center
+    &__image
+        width: 100%
+        height: 100%
+        max-width: 240px
+        max-height: 240px
+    &__body
+        +zenKakuGothicNew
+        font-size: 1rem
+        text-align: center
+        font-weight: bold
+    &__brand
+        +break(1)
+        overflow: hidden
+        font-size: 1.25rem
+    &__name
+        +break(2)
+        font-weight: 500
+        overflow: hidden
+        font-size: 1rem
+    &__price
+        padding: 8px 0 4px
+        font-size: 1.25rem
+    .splide
+        $arrowDistence: -62px
+        &__arrow
+            top: 130px
+            &--prev
+                left: $arrowDistence
+            &--next
+                right: $arrowDistence
+
+.heading
+    &__block
+        +flex
+        +zenKakuGothicNew(700)
+        font-size: 2.75rem
+        margin: 20px 0
+        span
+            +flex
+            font-size: 1.75rem
+
+.about
+    background-image: url('../images/about_banner.png')
+    background-size: cover
+    background-repeat: no-repeat
+    background-attachment: fixed
+    background-position: center 20%
+    &__block
+        +flex
+        +zenKakuGothicNew
+        padding: 150px 0
+        color: #ffffff
+        justify-content: space-evenly
+        align-items: center
+    &__title
+        h3
+            font-size: 1.75em
+    &__logo
+        +flex
+        max-width: 260px
+    &__content
+        margin: 60px 0 0 0
+        width: 100%
+        padding: 0 0 0 34px
+        border: 2px solid #ffffff
+        border-width: 0 0 0 3px
+        max-width: calc(100% - 600px)
+        font-size: 1.3em
+
+.footer
+    $footerColor: #f2b5bd
+    &__block
+        +flex
+    &__box
+        +flex
+        flex-wrap: nowrap
+        align-items: start
+        min-height: 580px
+        margin: 0
+        position: relative
+        padding: 0 0 0 120px
+        > .footer__content
+            &:nth-child(2)
+                .footer__text
+                    min-height: 730px
+            &:nth-child(4)
+                .footer__text
+                    &:nth-child(1)
+                        min-height: 520px
+                
+        &.flow
+            background-color: $footerColor
+            max-width: 100%
+            padding: 0
+            margin-top: 0
+    &__item
+        +flex
+        +bahnschrift
+        background-color: $fourth
+        color: $secondary
+        padding: 14px 0
+        margin: 20px 0 0 0
+        font-size: 1.5rem
+        img
+            max-width: 120px
+    &__content
+        +zenKakuGothicNew
+        box-sizing: border-box
+        color: #444444
+        margin: 10px 26px
+        line-height: 1.5rem
+        width: 100%
+        max-width: 425px
+        height: 100%
+        min-height: 700px
+        a
+            +hov
+            text-decoration: underline
+            font-weight: bold
+            color: #251919
+        &.title
+            width: unset
+            background-color: unset
+            overflow: visible
+            margin: -30px 100px 0 0
+    &__sub
+        font-weight: bold
+        color: $primary
+        font-size: 1.5rem
+        padding: 18px 0
+        line-height: unset
+    &__list
+        +flex
+        padding: 0
+        margin: 0
+        li
+            +flex
+            justify-content: start
+            align-items: center
+            text-align: left
+        img, span
+            +ib
+            width: 20px
+            height: 20px
+            padding: 2px 4px 0 0
+    &__image
+        width: 100%
+        max-width: 240px
+        margin: 16px 0
+    &__flow
+        +flex(1920px)
+        color: #444444
+        padding: 48px 0
+        &__headline
+            +ib(100%)
+            text-align: center
+            font-size: 2.5rem
+            padding: 24px 0
+        &__title
+            +flex
+            font-size: 1.25rem
+            margin: 6px 0
+            font-weight: bold
+        &__ele
+            +flex(10%)
+            z-index: 1
+        &__text
+            min-height: 60px
+        .image
+            width: 140px
+            min-height: 130px
+        i
+            padding: 0 15px
+            font-size: 3rem
+            color: #ec8387
+    &__title
+        +flex
+        justify-content: start
+        width: 100%
+        max-width: 450px
+        height: 80px
+        transform: rotate(90deg)
+        position: absolute
+        letter-spacing: 0.2rem
+        white-space: nowrap
+        div
+            +flex
+            +zenKakuGothicNew(800)
+            color: #5e5e5e
+            // font-weight: bold
+            padding: 0 0 0 8px
+            font-size: 1.25rem
+            justify-content: start
+        h3
+            +flex
+            +zenKakuGothicNew
+            justify-content: start
+            font-size: 3rem
+            font-weight: bold
+            color: $thirdly
+    &__text
+        justify-content: start
+        font-size: 0.9rem
+        background-color: $footerColor
+        padding: 34px
+        margin-top: 34px
+        border-radius: 50px
+        border-top-left-radius: 0px
+    &__waves
+        position: absolute
+        z-index: 0
+        width: 100%
+        max-width: 100%
+        height: 100%
+        min-height: 120px
+        max-height: 150px
+        // overflow: hidden
+        bottom: 0px
+        pointer-events: none
+        svg
+            max-height: 120%
+            width: 100%
+        .parallax > use
+            animation: wave 20000ms cubic-bezier(.85,.5,.35,.5) infinite
+            &:nth-child(1)
+                animation-delay: -2s
+                animation-duration: 10s
+            @keyframes wave
+                from
+                    transform: translate3d(-90px,0,0)
+                to
+                    transform: translate3d(85px,0,0)
+
+.gotop
+    &__box
+        +flex
+        // +hov
+        position: fixed
+        z-index: 99
+        bottom: 100px
+        right: 100px
+        height: 100%
+        max-width: 50px
+        max-height: 50px
+        font-size: 1.5rem
+        color: #ffffff
+        cursor: pointer
+        background-color: #00000057
+        border-radius: 3px
+        &:hover
+            opacity: .9
+        i
+            padding: 0 0 5px 0
+
+.splide
+    &__arrow
+        width: 34px
+        height: 34px
+        background: #aaaaaa
+        box-shadow: 2px 2px 2px #00000044
+        svg
+            fill: #ffffff
+
+@media all and (max-width: 1340px)
+    .search
+        &__block
+            max-width: 86%
+
+@media all and (max-width: 1280px)
+    .container
+        &.nav
+            max-width: 100%
+
+    .item
+        &__box
+            $marginW: 1%
+            margin: 8px $marginW
+            max-width: 49% - $marginW
+            justify-content: center
+        &__image
+            width: 100%
+            max-width: 42vw
+            height: 42vw
+        &__price
+            font-size: 7vw
+            img
+                width: 30%
+                height: 30%
+            span
+                font-size: 1.5rem
+        &__button
+            padding: 10px 0
+            font-size: 3vw
+
+    .about
+        &__block
+            justify-content: center
+        &__content
+            margin: 60px 0 0 0
+            width: 100%
+            padding: 0 0 0 34px
+            max-width: 80%
+
+    .footer
+        &__content
+            &.title
+                display: none
+        &__waves
+            svg
+                position: absolute
+                bottom: 0px
+        &__box
+            margin: 20px 0
+            padding: 0
+        &__sub
+            font-size: 1.25rem
