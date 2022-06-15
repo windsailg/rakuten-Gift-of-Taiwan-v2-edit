@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="css/splide.min.css" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/style.css?v=1.2" />
+    <link rel="stylesheet" href="css/style.css?v=1" id="MainStyle" />
   </head>
   <body>
     <div id="app">
@@ -100,8 +100,13 @@
 
       <!-- Top banner -->
       <div id="TopBanner" class="area">
-        <div class="container top" data-scroll data-scroll-speed="1.2" data-aos="fade-in" data-aos-duration="600">
-          <div id="SplideTop" class="splide top__splide">
+        <div class="container top" data-scroll data-scroll-speed="1.2">
+          <div
+            id="SplideTop"
+            class="splide top__splide"
+            data-aos="fade-in"
+            data-aos-duration="600"
+          >
             <div class="splide__track">
               <ul class="splide__list">
                 <li class="splide__slide" data-splide-interval="8000">
@@ -131,7 +136,28 @@
               </ul>
             </div>
           </div>
-
+          <div class="top__content">
+            <div
+              class="top__content__title"
+              data-aos="zoom-out"
+              data-aos-duration="1800"
+            >
+              台湾旅行で感じたトキメキを、
+              <br />
+              ここで再現。
+            </div>
+            <a
+              id="GoShopping"
+              href="#SplideSquareBanner"
+              class="top__content__shopping"
+              data-aos="zoom-out"
+              data-aos-duration="1800"
+              data-aos-delay="800"
+            >
+              <i class="fas fa-angle-double-down"></i>
+              GO SHOPPING
+            </a>
+          </div>
           <div class="top__waves">
             <svg
               class="waves"
@@ -163,7 +189,12 @@
         <div class="container">
           <ul class="categories categories__block">
             <div class="categories__box">
-              <li class="categories__item" data-aos="fade-up" data-aos-delay="0" data-aos-duration="700">
+              <li
+                class="categories__item"
+                data-aos="fade-up"
+                data-aos-delay="0"
+                data-aos-duration="700"
+              >
                 <a href="#">
                   <img
                     src="images/categories/iconbtn_01.svg"
@@ -171,7 +202,12 @@
                   />
                 </a>
               </li>
-              <li class="categories__item" data-aos="fade-up" data-aos-delay="50" data-aos-duration="700">
+              <li
+                class="categories__item"
+                data-aos="fade-up"
+                data-aos-delay="50"
+                data-aos-duration="700"
+              >
                 <a href="#">
                   <img
                     src="images/categories/iconbtn_02.svg"
@@ -179,7 +215,12 @@
                   />
                 </a>
               </li>
-              <li class="categories__item" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
+              <li
+                class="categories__item"
+                data-aos="fade-up"
+                data-aos-delay="100"
+                data-aos-duration="700"
+              >
                 <a href="#">
                   <img
                     src="images/categories/iconbtn_03.svg"
@@ -189,7 +230,12 @@
               </li>
             </div>
             <div class="categories__box">
-              <li class="categories__item" data-aos="fade-up" data-aos-delay="150" data-aos-duration="600">
+              <li
+                class="categories__item"
+                data-aos="fade-up"
+                data-aos-delay="150"
+                data-aos-duration="600"
+              >
                 <a href="#">
                   <img
                     src="images/categories/iconbtn_04.svg"
@@ -197,7 +243,12 @@
                   />
                 </a>
               </li>
-              <li class="categories__item" data-aos="fade-up" data-aos-delay="200" data-aos-duration="700">
+              <li
+                class="categories__item"
+                data-aos="fade-up"
+                data-aos-delay="200"
+                data-aos-duration="700"
+              >
                 <a href="#">
                   <img
                     src="images/categories/iconbtn_05.svg"
@@ -205,7 +256,12 @@
                   />
                 </a>
               </li>
-              <li class="categories__item" data-aos="fade-up" data-aos-delay="250" data-aos-duration="700">
+              <li
+                class="categories__item"
+                data-aos="fade-up"
+                data-aos-delay="250"
+                data-aos-duration="700"
+              >
                 <a href="#">
                   <img
                     src="images/categories/iconbtn_06.svg"
@@ -227,7 +283,6 @@
                 v-model="searchValue"
                 type="text"
                 class="search__input"
-                placeholder="SALEアイテム検索"
                 @keyup.enter="searchSale"
               />
               <div class="search__submit" @click="searchSale">
@@ -1369,6 +1424,50 @@
     <script src="js/splide.min.js"></script>
     <script src="js/splide-extension-auto-scroll.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.0/dist/locomotive-scroll.min.js"></script>
+    <script>
+      const tags = [
+        {
+          name: '#コスメ',
+          link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
+        },
+        {
+          name: '#雑貨・文房具',
+          link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
+        },
+        {
+          name: '#ソフトドリンク',
+          link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
+        },
+        {
+          name: '#ジュエリー・アクセサリー',
+          link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
+        },
+        {
+          name: '#スポーツ・車',
+          link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
+        },
+        {
+          name: '#ランキング入り',
+          link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
+        },
+        {
+          name: '#楽天Books',
+          link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
+        },
+        {
+          name: '#エンタメ・デジタル家電',
+          link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
+        },
+        {
+          name: '#グルメ',
+          link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
+        },
+        {
+          name: '#ファッション',
+          link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
+        },
+      ]
+    </script>
     <script src="js/main.js"></script>
   </body>
 </html>

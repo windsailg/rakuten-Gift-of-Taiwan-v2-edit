@@ -68,7 +68,7 @@ $buttonShadowBlur: 20px
         max-height: 80px
         padding: 0 50px 0
     &__nav
-        background-color: #ffffff
+        background-color: #ffffffdd
         padding: 6px 24px
         color: #444444
         border-radius: 50px
@@ -89,6 +89,39 @@ $buttonShadowBlur: 20px
     &__banner
         &.sp
             display: none
+    &__content
+        +flex
+        +zenKakuGothicNew(600)
+        +abs
+        height: 1px
+        color: #ffffff
+        font-size: 4rem
+        text-shadow: 2px 2px 6px #00000099
+        &__title
+            +flex
+            +abs
+            top: -120px
+            pointer-events: none
+            user-select: none
+        &__shopping
+            +flex
+            +abs
+            max-width: 300px
+            z-index: 2
+            height: 95px
+            bottom: -450px
+            font-size: 2rem
+            transition: 300ms all ease-in-out
+            color: #ffffffff
+            pointer-events: unset
+            &:hover
+                padding: 4px 0 0 0 
+                color: #ffffffdd
+
+            i
+                font-size: 3rem
+                width: 100%
+
     &__waves
         position: absolute
         bottom: 0px
@@ -155,7 +188,7 @@ $buttonShadowBlur: 20px
         border-radius: 100px
         text-align: left
         padding: 15px 100px 15px 25px
-        border: 2px solid #555555
+        border: 3px solid #555555
         min-height: 60px
         position: relative
         font-size: 1.5rem
@@ -585,7 +618,6 @@ $buttonShadowBlur: 20px
 .gotop
     &__box
         +flex
-        // +hov
         position: fixed
         z-index: 99
         bottom: 100px

@@ -1,46 +1,4 @@
 
-const tags = [
-    {
-        name: '#コスメ',
-        link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
-    },
-    {
-        name: '#雑貨・文房具',
-        link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
-    },
-    {
-        name: '#ソフトドリンク',
-        link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
-    },
-    {
-        name: '#ジュエリー・アクセサリー',
-        link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
-    },
-    {
-        name: '#スポーツ・車',
-        link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
-    },
-    {
-        name: '#ランキング入り',
-        link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
-    },
-    {
-        name: '#楽天Books',
-        link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
-    },
-    {
-        name: '#エンタメ・デジタル家電',
-        link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
-    },
-    {
-        name: '#グルメ',
-        link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
-    },
-    {
-        name: '#ファッション',
-        link: 'https://search.rakuten.co.jp/search/mall/コスメ/?sid=379923',
-    },
-]
 const VueApp = Vue.createApp({
     el: 'Gift of Taiwan',
     data() {
@@ -86,6 +44,19 @@ const VueApp = Vue.createApp({
             const scroll = new LocomotiveScroll(LocomotiveScrollParams)
         },
         setScrollEffect() {
+            $('#GoShopping').on('click', function (e) {
+                e.preventDefault()
+                const anchor = $(this).attr('href')
+                const anchorTop = $(anchor).offset().top
+                $('html, body')
+                    .stop()
+                    .animate(
+                        {
+                            scrollTop: anchorTop
+                        },
+                        700,
+                    )
+            })
             $('#GoTop').on('click', () => {
                 $('html, body').animate(
                     {
@@ -159,7 +130,7 @@ const VueApp = Vue.createApp({
             splideTop.mount()
             splideMiniBanner.mount()
             splideSquareBanner.mount()
-            
+
             const shopItemSplides = document.querySelectorAll('.shopitem__splide')
             shopItemSplides.forEach((e) => {
                 const s = new Splide(
@@ -179,5 +150,6 @@ const VueApp = Vue.createApp({
 const consoleStyle =
     "font-weight: bold; font-size: 1.05rem; font-family: '微軟正黑體'; color: #ffb93e;"
 
-
-const head = document.querySelector('head')
+// const style = document.querySelector('#MainStyle')
+// const val =  'css/style.css?v=' + (+ new Date())
+// style.setAttribute('href', val)
