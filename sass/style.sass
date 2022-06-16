@@ -9,12 +9,14 @@ $secondary: #f4b5bd
 $thirdly: #d1322f
 $fourth: #9a2224
 $buttonShadowBlur: 20px
+$textGray: #222222
 
-@mixin zenKakuGothicNew($weight: 400)
+
+@mixin zenKakuGothicNew($weight: 400) // 日
     font-family: 'Noto+Sans+JP', FontAwesome, 'Zen Kaku Gothic New'
     font-weight: $weight
 
-@mixin bahnschrift($weight: 400)
+@mixin bahnschrift($weight: 400) // 英
     font-family: 'bahnschrift'
     font-weight: $weight
 
@@ -70,9 +72,9 @@ $buttonShadowBlur: 20px
     &__nav
         background-color: #ffffffdd
         padding: 6px 24px
-        color: #444444
+        color: $textGray
         border-radius: 50px
-        margin: 0 20px 0 0
+        margin: 0 70px 0 0
         a
             +zenKakuGothicNew
             +hov
@@ -121,14 +123,13 @@ $buttonShadowBlur: 20px
             i
                 font-size: 3rem
                 width: 100%
-
     &__waves
         position: absolute
         bottom: 0px
         width: 100%
         height: 100%
-        min-height: 120px
-        max-height: 150px
+        min-height: 80px
+        max-height: 100px
         overflow: hidden
         pointer-events: none
         svg
@@ -174,6 +175,8 @@ $buttonShadowBlur: 20px
             max-width: 240px
         &__box
             max-width: unset
+            img
+                max-width: 240px
 
 .search
     &__block
@@ -225,7 +228,7 @@ $buttonShadowBlur: 20px
     $tagsBackgroundColor: #ececec
     &__block
         +flex
-        +bahnschrift
+        +zenKakuGothicNew(500)
         background-color: $tagsBackgroundColor
         margin: 24px 0 48px
         padding: 20px 10px
@@ -274,9 +277,8 @@ $buttonShadowBlur: 20px
         +flex
         padding: 20px
     &__content
-        font-family: '微軟正黑體'
-        font-weight: bold
-        color: #555555
+        +zenKakuGothicNew(500)
+        color: $textGray
         font-size: 1rem
         line-height: 2rem
 
@@ -302,7 +304,6 @@ $buttonShadowBlur: 20px
             &--next
                 right: 32%
     &__splide
-        margin: 46px 0
     &__slide
         max-width: 718px
         margin: 0 12px
@@ -408,6 +409,7 @@ $buttonShadowBlur: 20px
         $arrowDistence: -62px
         &__arrow
             top: 130px
+            background-color: #dfdfdf
             &--prev
                 left: $arrowDistence
             &--next
@@ -483,14 +485,14 @@ $buttonShadowBlur: 20px
         background-color: $fourth
         color: $secondary
         padding: 14px 0
-        margin: 20px 0 0 0
+        margin: 70px 0 0 0
         font-size: 1.5rem
         img
             max-width: 120px
     &__content
         +zenKakuGothicNew
         box-sizing: border-box
-        color: #444444
+        color: #000000
         margin: 10px 26px
         line-height: 1.5rem
         width: 100%
@@ -513,15 +515,33 @@ $buttonShadowBlur: 20px
         font-size: 1.5rem
         padding: 18px 0
         line-height: unset
+        text-align: left
     &__list
         +flex
+        justify-content: start
         padding: 0
-        margin: 0
-        li
+        > li
             +flex
             justify-content: start
             align-items: center
             text-align: left
+            margin: 4px 0
+        &.text
+            > li
+                display: block
+                position: relative
+                padding: 0 0 0 12px
+                &::before
+                    content: '–'
+                    position: absolute
+                    left: 0px
+            img
+                width: 100%
+                max-width: 200px
+                height: auto
+                padding: 2px 0
+                margin: 8px 0 2px
+
         img, span
             +ib
             width: 20px
@@ -533,7 +553,8 @@ $buttonShadowBlur: 20px
         margin: 16px 0
     &__flow
         +flex(1920px)
-        color: #444444
+        +zenKakuGothicNew
+        color: $textGray
         padding: 48px 0
         &__headline
             +ib(100%)
@@ -550,13 +571,17 @@ $buttonShadowBlur: 20px
             z-index: 1
         &__text
             min-height: 60px
+            +zenKakuGothicNew(600)
         .image
-            width: 140px
-            min-height: 130px
+            width: 80px
+            height: 80px
+            object-fit: unset
+
+            // min-height: 130px
         i
             padding: 0 15px
             font-size: 3rem
-            color: #ec8387
+            color: #dc5769
     &__title
         +flex
         justify-content: start
@@ -590,14 +615,15 @@ $buttonShadowBlur: 20px
         margin-top: 34px
         border-radius: 50px
         border-top-left-radius: 0px
+                
     &__waves
         position: absolute
         z-index: 0
         width: 100%
         max-width: 100%
         height: 100%
-        min-height: 120px
-        max-height: 150px
+        min-height: 80px
+        max-height: 100px
         // overflow: hidden
         bottom: 0px
         pointer-events: none
@@ -640,7 +666,7 @@ $buttonShadowBlur: 20px
         width: 34px
         height: 34px
         background: #aaaaaa
-        box-shadow: 2px 2px 2px #00000044
+        // box-shadow: 2px 2px 2px #00000044
         svg
             fill: #ffffff
 
@@ -653,6 +679,58 @@ $buttonShadowBlur: 20px
     .container
         &.nav
             max-width: 100%
+
+    .header
+        &__nav
+            margin: 0 3vw 0 0
+
+    .top
+        &__content
+            font-size: 3.5rem
+            &__title
+                +flex
+                +abs
+                top: -120px
+                pointer-events: none
+                user-select: none
+            &__shopping
+                bottom: -250px
+                font-size: 1.5rem
+        &__waves
+            min-height: 0px
+            max-height: 80px
+            overflow: hidden
+            pointer-events: none
+            svg
+                max-height: 150%
+                width: 100%
+            .parallax > use
+                animation: wave 20000ms cubic-bezier(.85,.5,.35,.5) infinite
+                &:nth-child(1)
+                    animation-delay: -2s
+                    animation-duration: 12s
+
+    .categories
+        &__box
+            +flex
+            max-width: unset
+        &__item
+            max-width: 14%
+            height: 100%
+            margin: 12px 5px
+
+    .imagine
+        .categories
+            &__box
+                img
+                    width: 100%
+                    height: 100%
+                    max-width: 100%
+                    max-height: 100%
+            &__item
+                +flex
+                width: 20vw
+                height: 20vw
 
     .item
         &__box
@@ -685,15 +763,46 @@ $buttonShadowBlur: 20px
             max-width: 80%
 
     .footer
-        &__content
-            &.title
-                display: none
         &__waves
             svg
                 position: absolute
                 bottom: 0px
+                height: 14vw
         &__box
+            min-height: 520px
+            flex-wrap: wrap
             margin: 20px 0
             padding: 0
+        &__content
+            margin: 10px
+            line-height: 1.5rem
+            width: 100%
+            max-width: 31%
+            height: 100%
+            min-height: 700px
+            a
+                +hov
+                text-decoration: underline
+                font-weight: bold
+                color: #251919
+            &.title
+                +flex
+                width: 100%
+                min-height: unset
+                max-width: 100%
+                margin: 20px 0
         &__sub
             font-size: 1.25rem
+        &__flow
+            &__ele
+                +flex(12%)
+        &__title
+            max-width: 100%
+            height: 80px
+            transform: rotate(0deg)
+            position: relative
+            div
+                padding: 0
+                justify-content: center
+            h3
+                justify-content: center
