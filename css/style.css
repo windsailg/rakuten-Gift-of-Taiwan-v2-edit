@@ -1131,7 +1131,7 @@
   -webkit-align-items: start;
       -ms-flex-align: start;
           align-items: start;
-  min-height: 580px;
+  min-height: 500px;
   margin: 0;
   position: relative;
   padding: 0 0 0 120px;
@@ -1213,7 +1213,7 @@
   width: unset;
   background-color: unset;
   overflow: visible;
-  margin: -30px 100px 0 0;
+  margin: 0px 100px 0 0;
 }
 
 .footer__sub {
