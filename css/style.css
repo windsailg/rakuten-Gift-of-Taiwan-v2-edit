@@ -173,7 +173,7 @@
 
 .top {
   position: relative;
-  min-height: 870px;
+  min-height: 50vw;
 }
 
 .top__splide {
@@ -1141,11 +1141,11 @@
 }
 
 .footer__box > .footer__content:nth-child(2) .footer__text {
-  min-height: 730px;
+  min-height: 770px;
 }
 
 .footer__box > .footer__content:nth-child(4) .footer__text:nth-child(1) {
-  min-height: 520px;
+  min-height: 525px;
 }
 
 .footer__box.flow {
@@ -1509,6 +1509,7 @@
   margin-top: 34px;
   border-radius: 50px;
   border-top-left-radius: 0px;
+  min-height: 210px;
 }
 
 .footer__waves {
@@ -1571,7 +1572,7 @@
   position: fixed;
   z-index: 99;
   bottom: 97px;
-  right: 100px;
+  right: 155px;
   height: 100%;
   max-width: 50px;
   max-height: 50px;
@@ -1598,6 +1599,12 @@
 
 .splide__arrow svg {
   fill: #ffffff;
+}
+
+@media all and (min-width: 1920px) {
+  .top {
+    min-height: 870px;
+  }
 }
 
 @media all and (max-width: 1340px) {
