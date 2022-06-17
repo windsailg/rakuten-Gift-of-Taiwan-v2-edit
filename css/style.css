@@ -173,6 +173,7 @@
 
 .top {
   position: relative;
+  min-height: 870px;
 }
 
 .top__splide {
