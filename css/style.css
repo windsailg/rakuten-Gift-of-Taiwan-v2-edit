@@ -247,6 +247,7 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  font-size: 4rem;
 }
 
 .top__content__shopping {
@@ -769,6 +770,7 @@
 
 .shopitem {
   position: relative;
+  margin: 36px 0 0;
 }
 
 .shopitem__block {
@@ -776,7 +778,7 @@
   max-width: 1140px;
   overflow: visible;
   position: relative;
-  margin: 36px 0;
+  margin: 12px 0 36px;
 }
 
 .shopitem__ele {
@@ -995,7 +997,7 @@
   font-family: 'Noto+Sans+JP', FontAwesome, 'Zen Kaku Gothic New';
   font-weight: 700;
   font-size: 2.75rem;
-  margin: 20px 0;
+  margin: 24px 0 0;
 }
 
 .heading__block span {
@@ -1439,7 +1441,7 @@
   white-space: nowrap;
 }
 
-.footer__title div {
+.footer__title ~ div {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1467,7 +1469,7 @@
           justify-content: start;
 }
 
-.footer__title h3 {
+.footer__title__main {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

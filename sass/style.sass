@@ -105,6 +105,7 @@ $textGray: #222222
             top: -120px
             pointer-events: none
             user-select: none
+            font-size: 4rem
         &__shopping
             +flex
             +abs
@@ -316,12 +317,13 @@ $textGray: #222222
 
 .shopitem
     position: relative
+    margin: 36px 0 0
     &__block
         min-width: 100px
         max-width: 1140px
         overflow: visible
         position: relative
-        margin: 36px 0
+        margin: 12px 0 36px
     &__ele
         +flex
         // max-width: 354px
@@ -420,7 +422,7 @@ $textGray: #222222
         +flex
         +zenKakuGothicNew(700)
         font-size: 2.75rem
-        margin: 20px 0
+        margin: 24px 0 0
         span
             +flex
             font-size: 1.75rem
@@ -592,7 +594,7 @@ $textGray: #222222
         position: absolute
         letter-spacing: 0.2rem
         white-space: nowrap
-        div
+        & ~ div
             +flex
             +zenKakuGothicNew(800)
             color: #5e5e5e
@@ -600,7 +602,7 @@ $textGray: #222222
             padding: 0 0 0 8px
             font-size: 1.25rem
             justify-content: start
-        h3
+        &__main
             +flex
             +zenKakuGothicNew
             justify-content: start
