@@ -262,6 +262,7 @@
                 name="sitem"
                 class="search__input"
                 placeholder="ショップ内から探す"
+                @drop.prevent="onDrop"
                 @keyup.enter="searchSale"
               />
               <div class="search__submit" @click="searchSale">
@@ -281,6 +282,9 @@
               :key="tag.name"
               :href="tag.link"
               target="_blank"
+              draggable="true"
+              @dragstart="onDragStart"
+              @dragend="onDragEnd"
             >
               {{ tag.name }}
             </a>
@@ -506,6 +510,7 @@
         data() {
           return {
             tags,
+            dragValue: null,
             searchValue: null,
           }
         },
@@ -567,6 +572,24 @@
           setAOS() {
             const AOSParams = { once: false }
             AOS.init(AOSParams)
+          },
+          onDragStart(event) {
+            this.dragValue = event.target.innerText.slice(1)
+          },
+          onDragEnd() {
+            this.dragValue = null
+          },
+          onDrop() {
+            this.searchValue = this.dragValue
+          },
+          onDragStart(event) {
+            this.dragValue = event.target.innerText.slice(1)
+          },
+          onDragEnd() {
+            this.dragValue = null
+          },
+          onDrop() {
+            this.searchValue = this.dragValue
           },
         },
       }).mount('#app')
