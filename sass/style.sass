@@ -11,7 +11,6 @@ $fourth: #9a2224
 $buttonShadowBlur: 20px
 $textGray: #222222
 
-
 @mixin zenKakuGothicNew($weight: 400) // 日
     font-family: 'Noto+Sans+JP', FontAwesome, 'Zen Kaku Gothic New'
     font-weight: $weight
@@ -119,7 +118,7 @@ $textGray: #222222
             color: #ffffffff
             pointer-events: unset
             &:hover
-                padding: 4px 0 0 0 
+                padding: 4px 0 0 0
                 color: #ffffffdd
 
             i
@@ -170,6 +169,98 @@ $textGray: #222222
     &__box
         +flex
         max-width: 625px
+
+// old style sidebar
+.main__categories
+    +flex
+    flex-wrap: nowrap
+    width: 100%
+    justify-content: space-between
+    .category__box
+        display: inline-block
+        box-sizing: border-box
+        max-width: 140px
+        width: 20%
+        margin: 0 1%
+        a
+            width: 100%
+            height: 100%
+            display: inline-block
+            position: relative
+        img
+            +img
+            +trs
+            &:last-child
+                margin: 0 auto
+                left: 0
+                right: 0
+                top: 0
+                bottom: 0
+                opacity: 0
+                position: absolute
+        &:hover
+            img
+            &:first-child
+                opacity: 0
+            &:last-child
+                opacity: 1
+
+.search
+    &__form
+        border: 1px solid #999999
+        background-color: #ffffff
+        border-radius: 2px
+        +flex
+        margin: 8px 0 15px
+        padding: 3px 0
+    &__input
+        height: 30px
+        width: calc( 100% - 38px)
+        font-size: 1.2em
+        padding: 0 0 0 10px
+        border: 0px solid
+        -webkit-box-shadow: 0 0 0 30px white inset !important
+    &__button
+        padding: 0 8px 0 0
+
+.category
+    &__sidebar
+        width: 100%
+        max-width: 240px
+    &__box
+        margin-bottom: 1.25rem
+    &__title
+        background-color: #BA0100
+        font-size: 17px
+        padding: 22px 5px 22px 20px
+        width: 100%
+        color: #ffffff
+        i
+            width: 22px
+    &__list
+        margin: .5rem 0
+        > li
+            min-height: 35px
+            width: 100%
+            cursor: pointer
+            color: #000000
+        a
+            padding: 5px 15px
+            display: block
+            width: 100%
+            text-decoration: unset
+            color: #000000
+            +hov(.7)
+            &:hover
+                background-color: #aaaaaa
+                color: #ffffff
+                i
+                    color: #ffffff
+            i
+            +hov(.7)
+            color: #777777
+            margin: 0 10px 0 0
+// old style sidebar end
 
 .imagine
     .categories
@@ -389,6 +480,8 @@ $textGray: #222222
     &__image
         width: 100%
         height: 100%
+        width: 240px
+        height: 240px
         max-width: 240px
         max-height: 240px
     &__body
@@ -400,11 +493,13 @@ $textGray: #222222
         +break(1)
         overflow: hidden
         font-size: 1.25rem
+        margin: 6px 0 4px
     &__name
         +break(2)
         font-weight: 500
         overflow: hidden
         font-size: 1rem
+        min-height: 48px
     &__price
         padding: 8px 0 4px
         font-size: 1.25rem
@@ -443,6 +538,7 @@ $textGray: #222222
         align-items: center
     &__title
         h3
+            font-weight: normal
             font-size: 1.75em
     &__logo
         +flex
@@ -454,7 +550,7 @@ $textGray: #222222
         border: 2px solid #ffffff
         border-width: 0 0 0 3px
         max-width: calc(100% - 600px)
-        font-size: 1.3em
+        font-size: 1.4rem
 
 .footer
     $footerColor: #f2b5bd
@@ -476,7 +572,7 @@ $textGray: #222222
                 .footer__text
                     &:nth-child(1)
                         min-height: 525px
-                
+
         &.flow
             background-color: $footerColor
             max-width: 100%
@@ -496,7 +592,7 @@ $textGray: #222222
         +zenKakuGothicNew
         box-sizing: border-box
         color: #000000
-        margin: 10px 26px
+        margin: 10px 12px
         line-height: 1.5rem
         width: 100%
         max-width: 425px
@@ -579,8 +675,6 @@ $textGray: #222222
             width: 80px
             height: 80px
             object-fit: unset
-
-            // min-height: 130px
         i
             padding: 0 15px
             font-size: 3rem
@@ -619,7 +713,7 @@ $textGray: #222222
         border-radius: 50px
         border-top-left-radius: 0px
         min-height: 210px
-                
+
     &__waves
         position: absolute
         z-index: 0
@@ -809,6 +903,8 @@ $textGray: #222222
             transform: rotate(0deg)
             position: relative
             div
+                width: 100%
+                text-align: center
                 padding: 0
                 justify-content: center
             h3

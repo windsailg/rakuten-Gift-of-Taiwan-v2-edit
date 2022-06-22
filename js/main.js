@@ -17,7 +17,7 @@ const VueApp = Vue.createApp({
     methods: {
         searchSale() {
             if (this.searchValue) {
-                const href = `https://search.rakuten.co.jp/search/mall/${this.searchValue}/?sid=379923`
+                const href = `https://search.rakuten.co.jp/search/mall/${this.searchValue}/?sid=403482`
                 window.open(href, '_blank')
             }
         },
