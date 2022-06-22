@@ -88,6 +88,7 @@ const VueApp = Vue.createApp({
             const splideMiniBannerParams = {
                 perPage: 3,
                 perMove: 1,
+                gap: 24,
                 pagination: false,
                 arrows: true,
                 autoplay: true,
@@ -98,6 +99,7 @@ const VueApp = Vue.createApp({
             const splideSquareBannerParams = {
                 perPage: 3,
                 perMove: 1,
+                gap: 24,
                 pagination: false,
                 arrows: true,
                 autoplay: true,

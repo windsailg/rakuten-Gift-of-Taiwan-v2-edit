@@ -912,7 +912,6 @@
 
 .minibanner__slide {
   max-width: 478px;
-  margin: 0 12px;
 }
 
 .squarebanner {
@@ -920,7 +919,7 @@
 }
 
 .squarebanner .splide__arrow--prev {
-  left: 33%;
+  left: 32%;
 }
 
 .squarebanner .splide__arrow--next {
@@ -929,7 +928,6 @@
 
 .squarebanner__slide {
   max-width: 718px;
-  margin: 0 12px;
 }
 
 .squarebanner__slide a {
@@ -1783,6 +1781,15 @@
 @media all and (min-width: 1920px) {
   .top {
     min-height: 870px;
+  }
+}
+
+@media all and (max-width: 1620px) {
+  .minibanner .splide__arrow--prev {
+    left: 32%;
+  }
+  .minibanner .splide__arrow--next {
+    right: 32%;
   }
 }
 

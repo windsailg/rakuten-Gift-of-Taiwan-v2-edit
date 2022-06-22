@@ -386,20 +386,17 @@ $textGray: #222222
         margin: 46px 0
     &__slide
         max-width: 478px
-        margin: 0 12px
 
 .squarebanner
     max-width: 100%
     .splide
         &__arrow
             &--prev
-                left: 33%
+                left: 32%
             &--next
                 right: 32%
-    &__splide
     &__slide
         max-width: 718px
-        margin: 0 12px
         a
             transition: 100ms opacity ease-in-out
             opacity: .4
@@ -771,6 +768,16 @@ $textGray: #222222
 @media all and (min-width: 1920px)
     .top
         min-height: 870px
+
+@media all and (max-width: 1620px)
+    .minibanner
+        .splide
+            &__arrow
+                &--prev
+                    left: 32%
+                &--next
+                    right: 32%
+
 @media all and (max-width: 1340px)
     .search
         &__block

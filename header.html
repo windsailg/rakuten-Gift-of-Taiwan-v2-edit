@@ -32,6 +32,14 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/style.css?v=1.0" id="MainStyle" />
+    <style>
+      .splide__track {
+        width: 1920px;
+      }
+      .minibanner .splide__track {
+        width: 1500px;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
@@ -536,25 +544,27 @@
               speed: 1500,
             }
             const splideMiniBannerParams = {
-              perPage: 3,
-              perMove: 1,
-              pagination: false,
-              arrows: true,
-              autoplay: true,
-              type: 'loop',
-              easing: 'ease',
-              speed: 600,
+                perPage: 3,
+                perMove: 1,
+                gap: 24,
+                pagination: false,
+                arrows: true,
+                autoplay: true,
+                type: 'loop',
+                easing: 'ease',
+                speed: 600,
             }
             const splideSquareBannerParams = {
-              perPage: 3,
-              perMove: 1,
-              pagination: false,
-              arrows: true,
-              autoplay: true,
-              type: 'loop',
-              easing: 'ease',
-              speed: 600,
-              focus: 'center',
+                perPage: 3,
+                perMove: 1,
+                gap: 24,
+                pagination: false,
+                arrows: true,
+                autoplay: true,
+                type: 'loop',
+                easing: 'ease',
+                speed: 600,
+                focus: 'center',
             }
             const splideTop = new Splide('#SplideTop', splideTopParams)
             const splideMiniBanner = new Splide(
