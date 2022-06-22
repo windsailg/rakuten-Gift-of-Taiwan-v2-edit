@@ -292,6 +292,7 @@
                 type="text"
                 class="search__input"
                 placeholder="ショップ内から探す"
+                @drop.prevent="onDrop"
                 @keyup.enter="searchSale"
               />
               <div class="search__submit" @click="searchSale">
@@ -300,7 +301,6 @@
                   src="images/search.svg"
                   alt="submit search svg"
                 />
-                <!-- <i class="fas fa-search"></i> -->
               </div>
             </div>
           </div>
@@ -315,6 +315,9 @@
               :key="tag.name"
               :href="tag.link"
               target="_blank"
+              draggable="true"
+              @dragstart="onDragStart"
+              @dragend="onDragEnd"
             >
               {{ tag.name }}
             </a>

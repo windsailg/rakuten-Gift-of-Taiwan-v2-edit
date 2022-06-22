@@ -5,6 +5,7 @@ const VueApp = Vue.createApp({
         return {
             tags,
             searchValue: null,
+            dragValue: null,
         }
     },
     mounted() {
@@ -13,6 +14,7 @@ const VueApp = Vue.createApp({
         // this.setLocomotiveScroll()
         this.setScrollEffect()
         this.setAOS()
+        this.setTagsDraggable()
     },
     methods: {
         searchSale() {
@@ -143,6 +145,16 @@ const VueApp = Vue.createApp({
         setAOS() {
             const AOSParams = { once: false }
             AOS.init(AOSParams)
+        },
+        // Tags drag event
+        onDragStart(event) {
+            this.dragValue = event.target.innerText.slice(1)
+        },
+        onDragEnd() {
+            this.dragValue = null
+        },
+        onDrop() {
+            this.searchValue = this.dragValue
         },
     },
 }).mount('#app')
