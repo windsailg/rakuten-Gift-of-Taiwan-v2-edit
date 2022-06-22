@@ -14,7 +14,6 @@ const VueApp = Vue.createApp({
         // this.setLocomotiveScroll()
         this.setScrollEffect()
         this.setAOS()
-        this.setTagsDraggable()
     },
     methods: {
         searchSale() {
