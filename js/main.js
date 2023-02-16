@@ -83,6 +83,7 @@ const VueApp = Vue.createApp({
                 type: 'fade',
                 easing: 'ease',
                 rewind: true,
+                pauseOnHover: false,
                 speed: 1500,
             }
             const splideMiniBannerParams = {

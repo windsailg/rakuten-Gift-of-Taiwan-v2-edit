@@ -170,6 +170,12 @@ $textGray: #222222
         +flex
         max-width: 625px
 
+.calendar
+    &__title
+        padding: 22px 5px 22px 20px
+        background-color: #BA0100
+        color: #ffffff
+        font-weight: bold
 // old style sidebar
 .main__categories
     +flex
@@ -233,19 +239,20 @@ $textGray: #222222
         background-color: #BA0100
         font-size: 17px
         padding: 22px 5px 22px 20px
+        margin: 0 0 12px 0
         width: 100%
         color: #ffffff
         i
             width: 22px
     &__list
-        margin: .5rem 0
+        font-size: 0.85rem
         > li
             min-height: 35px
             width: 100%
             cursor: pointer
             color: #000000
         a
-            padding: 5px 15px
+            padding: 6px 15px
             display: block
             width: 100%
             text-decoration: unset
@@ -260,8 +267,48 @@ $textGray: #222222
             +hov(.7)
             color: #777777
             margin: 0 10px 0 0
+    &__expension__title
+        font-size: 0.9rem
+        padding: 8px 18px 8px 15px
+        position: relative
+        i
+            pointer-events: none
+            position: absolute
+            right: 10px
+            top: 0
+            bottom: 0
+            margin: auto
+            height: 14px
+        &.active
+            i
+                transform: rotate(180deg)
+        &.disabled
+            position: relative
+            z-index: 1
+            &::before
+                z-index: 100
+                content: ''
+                position: absolute
+                width: 100%
+                height: 100%
+                top: 0
+                bottom: 0
+                right: 0
+                left: 0
+                background-color: #0cdab2aa
+    &__first
+        padding: 4px 0
+    &__secondary
+        overflow: hidden
+        display: none
+        a
+            padding: 4px 0 4px 20px 
+    &__image__box
+        img
+            width: 100%
+            max-width: 220px
 // old style sidebar end
-
+    
 .imagine
     .categories
         &__item
